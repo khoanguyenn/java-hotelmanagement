@@ -1,0 +1,28 @@
+.nav-button {
+    -fx-background-color: #5A82EA;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 30, 0.25, 0.0, 3.0);
+    -fx-text-fill: whitesmoke;
+    -fx-background-radius: 5px;
+}
+.nav-button:hover {
+    -fx-background-color: #4269E2;
+}
+.nav-button:focused  {
+    -fx-background-color: #2058DC;
+}
+.left-pane {
+    -fx-background-color: #EAF3FA;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 30, 0.1, 0.0, 0.0);
+}
+
+.button {
+    -fx-background-color: #5A82EA;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 30, 0.25, 0.0, 3.0);
+    -fx-text-fill: whitesmoke;
+    -fx-background-radius: 5px;
+}
+
+.button:hover {
+    -fx-background-color: #4269E2;
+}
+

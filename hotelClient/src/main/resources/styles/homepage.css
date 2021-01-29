@@ -1,0 +1,13 @@
+.info-box {
+    -fx-background-color: #5A82EA;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.3), 30, 0.25, 0.0, 3.0);
+    -fx-text-fill: whitesmoke;
+    -fx-background-radius: 5px;
+}
+.info-box:hover {
+    -fx-background-color: #4269E2;
+}
+
+.image-box {
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.8), 10, 0, 0, 0);
+}
