@@ -7,7 +7,7 @@
   + Download JavaFX SDK from [here](https://gluonhq.com/products/javafx/).
   + Place JavaFX SDK as your favourite (note it for later usage).
   + Add your JavaFX SDK path to the command. Ex: `java --module-path E:\javafx-sdk-15.0.1\lib --add-modules javafx.controls,javafx.fxml,mysql.connector -jar target\hotelmanagement-1.0-SNAPSHOT.jar`.
-
+4. Run JavaFX debug: `maven javafx:run`.
 ## Maven Tomcat deploy
 1. Go to server's folder: `cd hotelServer`.
 2. Deloy with cargo plugin by: `mvn cargo:deploy`.
