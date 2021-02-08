@@ -4,6 +4,7 @@ import com.google.gson.reflect.TypeToken;
 import fraus.javaproject.MainApp;
 import fraus.javaproject.api.Client;
 import fraus.javaproject.model.Room;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.transformation.FilteredList;
 import javafx.event.ActionEvent;
@@ -135,20 +136,25 @@ public class RoomManagementController {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                //Wrap list of room into FilteredList
-                List<Room> listOfRoom = new Client("rooms")
-                        .setMethod("GET")
-                        .sendRequest()
-                        .mappingTo(new TypeToken<List<Room>>(){}.getType());
-                filteredRoomList = new FilteredList<>(FXCollections.observableArrayList(listOfRoom));
+                Platform.runLater(new Runnable() {
+                    @Override
+                    public void run() {
+                        //Wrap list of room into FilteredList
+                        List<Room> listOfRoom = new Client("rooms")
+                                .setMethod("GET")
+                                .sendRequest()
+                                .mappingTo(new TypeToken<List<Room>>(){}.getType());
+                        filteredRoomList = new FilteredList<>(FXCollections.observableArrayList(listOfRoom));
 
-                //Data settings
-                roomNumberCol.setCellValueFactory(new PropertyValueFactory<Room, String>("number"));
-                roomTypeCol.setCellValueFactory(new PropertyValueFactory<Room, String>("type"));
-                statusCol.setCellValueFactory(new PropertyValueFactory<Room, String>("status"));
+                        //Data settings
+                        roomNumberCol.setCellValueFactory(new PropertyValueFactory<Room, String>("number"));
+                        roomTypeCol.setCellValueFactory(new PropertyValueFactory<Room, String>("type"));
+                        statusCol.setCellValueFactory(new PropertyValueFactory<Room, String>("status"));
 
-                //Render all data to corresponding table
-                roomTable.setItems(filteredRoomList);
+                        //Render all data to corresponding table
+                        roomTable.setItems(filteredRoomList);
+                    }
+                });
             }
         }).start();
     }

@@ -5,13 +5,13 @@
 <hibernate-configuration>
     <session-factory>
         <!-- Create table if not exists -->
-        <property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="hibernate.hbm2ddl.auto">create</property>
         <!-- The JDBC driver of your database -->
         <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
         <!-- Indicate the database to generate suitable SQL -->
         <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
         <!-- The JDBC URL to the database instance -->
-        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/mydata</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/hotel</property>
         <!-- The database username -->
         <property name="hibernate.connection.username">root</property>
         <!-- The database password -->

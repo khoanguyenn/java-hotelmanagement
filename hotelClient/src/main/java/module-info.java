@@ -10,7 +10,7 @@ module fraus.javaproject {
     requires java.net.http;
 
     opens fraus.javaproject.controller to javafx.fxml;
-    opens fraus.javaproject.model to javafx.base;
+    opens fraus.javaproject.model to javafx.base, com.google.gson;
 
     opens fraus.javaproject to javafx.graphics;
 

@@ -21,5 +21,11 @@ E:/MavenWebApp/src/main/resources/hibernate.cfg.xml</remarks>
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://localhost:3306/mydata?useSSL=false</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="hotel@localhost" uuid="34f9f161-5fd7-486a-9b8c-c4082568fe58">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306/hotel</jdbc-url>
+    </data-source>
   </component>
 </project>
