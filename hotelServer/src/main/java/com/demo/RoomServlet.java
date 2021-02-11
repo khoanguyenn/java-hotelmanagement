@@ -2,8 +2,12 @@ package com.demo;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.rmi.server.ServerCloneException;
 import java.util.HashMap;
 import java.util.List;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletContext;
+import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -15,7 +19,7 @@ import com.google.gson.*;
 public class RoomServlet extends HttpServlet {
     private Gson gson = new Gson();
 
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         RoomDAO roomDAO = new RoomDAO();
         boolean getCount = Boolean.parseBoolean(request.getParameter("get_count"));
         boolean getAvailable = Boolean.parseBoolean(request.getParameter("get_available"));
@@ -37,6 +41,7 @@ public class RoomServlet extends HttpServlet {
             List<Room> availableRoom = roomDAO.getAllAvailable();
             responseJSON = gson.toJson(availableRoom);
         }
+
         PrintWriter output = response.getWriter();
         output.println(responseJSON);
     }

@@ -111,6 +111,8 @@ public class BookingPageController {
             //Create a new customer to submit
             HashMap<String, String> customerParams;
             Customer insertCustomer;
+
+            //If not select any customer from database
             if (selectedCustomer == null) {
                 customerParams = new HashMap<String, String>() {{
                     put("firstName", firstNameTF.getText());
@@ -138,13 +140,6 @@ public class BookingPageController {
             String updatedRoomStatus = "";
             if (bookingMethodChoice.getValue().toString().equals("On desk")) updatedRoomStatus = "Staying";
             if (bookingMethodChoice.getValue().toString().equals("Via telephone")) updatedRoomStatus = "Reserved";
-
-            //Prepare a new updating room to update
-            //Room updatedRoom = new Room(
-            //        roomNumberChoice.getValue().toString(),
-            //        roomTypeChoice.getValue().toString(),
-            //        updatedRoomType
-            //        );
 
             String finalUpdatedRoomStatus = updatedRoomStatus;
             var updatedRoom = new HashMap<String, String>() {{

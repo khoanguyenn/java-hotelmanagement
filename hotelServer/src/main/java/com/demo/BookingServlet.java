@@ -27,6 +27,7 @@ public class BookingServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String customerId = request.getParameter("customer_id");
+        String action = request.getServletPath();
 
         BookingDAO bookingDAO = new BookingDAO();
         String[] requestURI = request.getRequestURI().split("/");

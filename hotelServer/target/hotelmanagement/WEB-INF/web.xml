@@ -2,7 +2,12 @@
  "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
  "http://java.sun.com/dtd/web-app_2_3.dtd" >
 
-<web-app>
+<web-app
+        xmlns="http://java.sun.com/xml/ns/j2ee"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd"
+        version="2.4">
+  >
   <display-name>Archetype Created Web Application</display-name>
   <servlet>
     <servlet-name>roomPage</servlet-name>
@@ -16,7 +21,10 @@
     <servlet-name>BookingPage</servlet-name>
     <servlet-class>com.demo.BookingServlet</servlet-class>
   </servlet>
-
+  <servlet>
+    <servlet-name>HomePage</servlet-name>
+    <servlet-class>com.demo.HomeServlet</servlet-class>
+  </servlet>
   <servlet-mapping>
     <servlet-name>roomPage</servlet-name>
     <url-pattern>/rooms/*</url-pattern>
@@ -28,5 +36,9 @@
   <servlet-mapping>
     <servlet-name>BookingPage</servlet-name>
     <url-pattern>/bookings/*</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>HomePage</servlet-name>
+    <url-pattern>/home/*</url-pattern>
   </servlet-mapping>
 </web-app>
