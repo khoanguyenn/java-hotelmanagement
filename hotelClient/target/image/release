@@ -1,0 +1,2 @@
+JAVA_VERSION="11.0.9"
+MODULES="java.base java.logging java.transaction.xa java.xml java.sql com.google.gson java.security.sasl java.naming java.net.http java.datatransfer java.prefs java.desktop javafx.base jdk.unsupported javafx.graphics javafx.controls java.scripting javafx.fxml fraus.javaproject"
