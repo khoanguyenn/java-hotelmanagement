@@ -1,5 +1,20 @@
 # Hotel management Java project
 
+## Introduction
+This is Hotel management desktop application programmed to management a specific hotel.
+
+Made to accomplish Java-OOP modular on semester 3 of VGU.
+### Technology uses:
++ Desktop application:
+  + Maven
+  + JavaFX (with Scene Builder)
++ Back-end Server:
+  + Maven
+  + Tomcat 9
+  + Hibernate (to connect with MySQL)
++ Database:
+  + MySQL 9
+
 ## Maven JavaFX build & run
 1. Go to Javafx client's folder `cd hotelClient`
 2. Build package by using command `maven package`
@@ -7,7 +22,7 @@
   + Download JavaFX SDK from [here](https://gluonhq.com/products/javafx/).
   + Place JavaFX SDK as your favourite (note it for later usage).
   + Add your JavaFX SDK path to the command. Ex: `java --module-path E:\javafx-sdk-15.0.1\lib --add-modules javafx.controls,javafx.fxml,mysql.connector -jar target\hotelmanagement-1.0-SNAPSHOT.jar`.
-
+4. Run JavaFX debug: `maven javafx:run`.
 ## Maven Tomcat deploy
 1. Go to server's folder: `cd hotelServer`.
 2. Deloy with cargo plugin by: `mvn cargo:deploy`.
