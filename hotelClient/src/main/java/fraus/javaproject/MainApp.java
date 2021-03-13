@@ -8,6 +8,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.paint.Color;
 import javafx.stage.Modality;
@@ -29,7 +30,7 @@ public class MainApp extends Application {
     public void start(Stage primaryStage) throws Exception{
         this.primaryStage = primaryStage;
         primaryStage.setTitle("Hotel Room Management");
-
+        primaryStage.getIcons().add(new Image("icon/house.png"));
         initRootLayout();
         showHomepage();
     }
