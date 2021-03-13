@@ -11,8 +11,9 @@ import java.util.Map;
 
 /**
  * <p>
- *     This class is utilized to connect to server, accept 4 main request methods GET, POST, PUT, DELETE.
- * <p/>
+ *     This class is utilized BUILDER pattern to create communication channel to web-server using JSON
+ *     ,accepting 4 important methods GET, POST, PUT, DELETE request methods.
+ * </p>
  * @author Dang Khoa Nguyen
  * @version 1.0.2
  * */
@@ -24,14 +25,10 @@ public class Client {
 
     /**
      * <p>
-     *     Select which <strong>route</strong> connects to server. <br>
-     *     Usage: <br>
-     *     Client client = new Client("rooms"); <br>
-     *     List<Room> response = client <br>
-     *             .setMethod("GET") <br>
-     *             .sendRequest() <br>
-     *             .mappingTo(new TypeToken<List<Room>>(){}.getType());
+     *     Select which <strong>route</strong> connects to server.
      * </p>
+     * @param route as route, may be the database's name.
+     * @return this to chain the next options
      * */
     public Client(String route) {
         this.host += route;
@@ -55,7 +52,7 @@ public class Client {
      *     If you use GET method, you don't need to set params
      * </p>
      * @param params as HashMap<String, String>
-     * @return this
+     * @return this to change the next options
      * */
     public Client setParams(HashMap<String, String> params) {
         StringBuilder result  = new StringBuilder();
@@ -81,7 +78,7 @@ public class Client {
      * <p>
      *     Send built request to back-end server.
      * </p>
-     * @return this
+     * @return this to complete the request and send to web-server, then return the next chain for mapping purpose
      * */
     public Client sendRequest() {
         try {

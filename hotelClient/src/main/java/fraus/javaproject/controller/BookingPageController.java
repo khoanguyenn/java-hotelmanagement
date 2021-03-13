@@ -3,12 +3,6 @@ package fraus.javaproject.controller;
 import com.google.gson.reflect.TypeToken;
 import fraus.javaproject.MainApp;
 import fraus.javaproject.api.Client;
-import fraus.javaproject.dao.Booking.BookingDAO;
-import fraus.javaproject.dao.Booking.BookingDAOImpl;
-import fraus.javaproject.dao.Customer.CustomerDAO;
-import fraus.javaproject.dao.Customer.CustomerDAOImpl;
-import fraus.javaproject.dao.Room.RoomDAO;
-import fraus.javaproject.dao.Room.RoomDAOImpl;
 import fraus.javaproject.model.Customer;
 import fraus.javaproject.model.Room;
 import fraus.javaproject.utils.DateUtil;
@@ -103,7 +97,9 @@ public class BookingPageController {
         roomNumberChoice.setItems(newRoomList);
 
         //Set the first item to combo-box
-        roomNumberChoice.setValue(newRoomList.get(0));
+        if (newRoomList.size() > 0) {
+            roomNumberChoice.setValue(newRoomList.get(0));
+        }
     }
     @FXML
     void onSubmit(ActionEvent event) {
@@ -177,7 +173,13 @@ public class BookingPageController {
                     .setMethod("POST")
                     .setParams(updateBooking)
                     .sendRequest();
-
+            if (updateBooking != null) {
+                Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Successfully add new customers");
+                alert.setHeaderText("Successfully add new customers");
+                alert.setContentText("New customer added");
+                alert.showAndWait();
+            }
             //Clear all textfield
             clearAll();
         }

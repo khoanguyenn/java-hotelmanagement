@@ -19,9 +19,9 @@
 </head>
 <body>
     <div align="center">
-        <div class="row" style="width: 500px">
-            <div class="col-sm-4"><h2>Room list</h2></div>
-            <div class="col-sm-8"><button class="btn btn-success" data-toggle="modal" data-target="#roomModal"><span><i class="fa fa-new"></i></span>Add new room</button></div>
+        <div class="row mt-3 mb-2" style="width: 500px">
+            <div class="col-sm-7"><h2>Room list</h2></div>
+            <div class="col-sm-5"><button class="btn btn-success" data-toggle="modal" data-target="#roomModal"><span class="mr-1"><i class="fas fa-user-plus"></i></span>Add new room</button></div>
         </div>
         <div style="width: 500px">
             <table class="table table-hover table-bordered">
@@ -41,10 +41,13 @@
                                     class="btn btn-success"
                                     data-toggle="modal"
                                     data-target="#roomModal"
-                                    data-room-number="${room.number}"
-                                    data-room-type="${room.type}"
-                                    data-room-status="${room.status}"><span><i class="far fa-edit"></i></span>Edit</button>
-                            <button class="btn btn-danger"><span><i class="fas fa-trash"></i></span>Delete</button>
+                                    data-request="PUT"
+                                    data-room='${room.toJSON()}'><span class="mr-1"><i class="far fa-edit"></i></span>Edit</button>
+                            <button class="btn btn-danger"
+                                    data-toggle="modal"
+                                    data-target="#roomModal"
+                                    data-request="DELETE"
+                                    data-room='${room.toJSON()}'><span class="mr-1"><i class="fas fa-trash"></i></span>Delete</button>
                         </td>
                     </tr>
                 </c:forEach>
@@ -73,7 +76,7 @@
                         <div class="form-group row mb-2">
                             <label for="roomNumber" class="col-sm-4 col-form-label">Room number</label>
                             <div class="col-sm-8">
-                                <input type="text" class="form-control" id="roomNumber" placeholder="${room.number}" name="number">
+                                <input type="text" class="form-control" id="roomNumber" name="number">
                             </div>
                         </div>
                         <div class="form-group row mb-2">
@@ -110,6 +113,7 @@
             </div>
         </div>
     </div>
+
     </div>
     <script>
         var roomModal =
@@ -120,19 +124,34 @@
                 // Button that triggered the modal
                 var button = event.relatedTarget;
                 // Extract info from data-* attributes
-                var roomNumber = button.getAttribute("data-room-number");
-                var roomType = button.getAttribute("data-room-type");
-                var roomStatus = button.getAttribute("data-room-status");
+                var room = JSON.parse(button.getAttribute("data-room"));
+                var requestMethod = button.getAttribute("data-request");
+
                 // Update the modal's content.
-
                 var numberInput = roomModal.querySelector(".modal-body input");
-                var selectInput =
-                    roomModal.querySelectorAll(".modal-body select");
+                var selectInput = roomModal.querySelectorAll(".modal-body select");
 
-                numberInput.value = roomNumber;
-                selectInput[0].value = roomType;
-                selectInput[1].value = roomStatus;
+                //Add PUT method
+                if (requestMethod) {
+                    var requestParam = document.createElement("input")
+                    requestParam.setAttribute("name", "_method");
+                    requestParam.hidden = true;
+                    requestParam.value = requestMethod
+                    numberInput.readOnly = true;
+                    var modalBody = roomModal.querySelector(".modal-body");
+                    modalBody.appendChild(requestParam);
+                } else {
+                    //Clear all of inputs & selects
+                    numberInput.readOnly = false;
+                    numberInput.value = "";
+                    selectInput.map(selectedInput => selectedInput.value = "");
+                }
+
+                numberInput.value = room["number"];
+                selectInput[0].value = room["type"];
+                selectInput[1].value = room["status"];
             });
+
     </script>
 </body>
 </html>

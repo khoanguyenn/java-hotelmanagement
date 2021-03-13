@@ -106,4 +106,5 @@ public class Booking  {
     public void setBookingMethod(String bookingMethod) {
         this.bookingMethod = bookingMethod;
     }
+
 }

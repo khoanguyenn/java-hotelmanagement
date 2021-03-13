@@ -8,7 +8,11 @@ import javafx.collections.ObservableList;
 
 import java.sql.*;
 import java.time.LocalDate;
-
+/**
+ * @author Dang Khoa Nguyen
+ * @see fraus.javaproject.dao.Booking.BookingDAO
+ * @deprecated
+ * */
 public class BookingDAOImpl implements BookingDAO {
     private ObservableList<Booking> bookingList = FXCollections.observableArrayList();
     private static Connection connection = DBUtil.getConnection();

@@ -1,7 +1,5 @@
 package fraus.javaproject;
 
-import com.google.gson.reflect.TypeToken;
-import fraus.javaproject.api.Client;
 import fraus.javaproject.controller.*;
 import fraus.javaproject.model.Customer;
 import fraus.javaproject.model.Room;
@@ -11,16 +9,16 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import java.io.IOException;
-import java.util.List;
+import java.net.URL;
 
 /**
- * JavaFX App
+ * JavaFX Main application, contains all of the view method to display the root page, dialog, and other pages.
+ * This application uses Model-View-Controller pattern to the efficiently display information to users.
  */
 public class MainApp extends Application {
     private Stage primaryStage;
@@ -36,6 +34,9 @@ public class MainApp extends Application {
         showHomepage();
     }
 
+    /**
+     * Adding fading transition to the loading progress
+     * @param node as the page to wrap the transition*/
     private void makeFadeTransition(Node node) {
         FadeTransition fadeTransition = new FadeTransition();
         fadeTransition.setDuration(Duration.millis(500));
@@ -44,9 +45,26 @@ public class MainApp extends Application {
         fadeTransition.setToValue(1);
         fadeTransition.play();
     }
-
     /**
-     * Initializes the root layout
+     * This member method is utilized to load the required resource to the main view
+     * @param resource as URL of the resource to be loaded
+     * @return controller to the the specific page*/
+    private Object layoutLoader(URL resource) throws IOException {
+            //Load the fxml room management file
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(resource);
+            AnchorPane theAnchorPane = (AnchorPane) loader.load();
+
+            //Set transition
+            makeFadeTransition(theAnchorPane);
+
+            rightAnchorPane.getChildren().setAll(theAnchorPane);
+
+            return loader.getController();
+    }
+    /**
+     * Initializes the root layout,
+     * make the window and load the root view to the left-hand as menu.
      * */
     public void initRootLayout() {
         try {
@@ -76,23 +94,42 @@ public class MainApp extends Application {
     }
     public void showRoomOverview() {
         try {
-            //Load the fxml room management file
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(MainApp.class.getResource("RoomManagement.fxml"));
-            Pane roomOverview = (Pane) loader.load();
+            URL roomManagementURL = MainApp.class.getResource("RoomManagement.fxml");
+            RoomManagementController controller = (RoomManagementController) layoutLoader(roomManagementURL);
+            controller.setMainApp(this);
+        } catch (Exception exception) {
+            exception.printStackTrace();
+        }
+    }
+    public void showCustomerManagement() {
+        try {
+            URL customerManagementURL = MainApp.class.getResource("CustomerManagement.fxml");
+            CustomerManagementController controller = (CustomerManagementController) layoutLoader(customerManagementURL);
+            controller.setMainApp(this);
+        } catch (Exception exception) {
+            exception.printStackTrace();
+        }
+    }
 
-            //Set transition
-            makeFadeTransition(roomOverview);
-
-            rightAnchorPane.getChildren().setAll(roomOverview);
-
-            // Give the controller access to the main app.
-            RoomManagementController controller = loader.getController();
+    public void showBookingForm() {
+        try {
+            URL bookingFormURL = MainApp.class.getResource("BookingPage.fxml");
+            BookingPageController controller = (BookingPageController) layoutLoader(bookingFormURL);
             controller.setMainApp(this);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
+    public void showHomepage() {
+        try {
+            URL homepageURL = MainApp.class.getResource("HomePage.fxml");
+            HomepageController controller = (HomepageController) layoutLoader(homepageURL);
+            controller.setMainApp(this);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
     public boolean showRoomEditDialog(Room room, boolean isDisable) {
         try {
             //Load the fxml file and create a new stage for the popup dialog
@@ -123,47 +160,6 @@ public class MainApp extends Application {
         } catch (IOException e) {
             e.printStackTrace();
             return false;
-        }
-    }
-    public void showCustomerManagement() {
-        try {
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(MainApp.class.getResource("CustomerManagement.fxml"));
-            AnchorPane displayBooking = (AnchorPane) loader.load();
-
-            //Set transition
-            makeFadeTransition(displayBooking);
-
-            rightAnchorPane.getChildren().setAll(displayBooking);
-
-            // Give the controller access to the main app.
-            CustomerManagementController controller = loader.getController();
-            controller.setMainApp(this);
-
-        } catch (Exception exception) {
-            exception.printStackTrace();
-        }
-    }
-
-    public void showBookingForm() {
-        try {
-            //Load the booking page fxml file
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(MainApp.class.getResource("BookingPage.fxml"));
-            AnchorPane bookingForm = (AnchorPane) loader.load(); //Casting AnchorPane -> Pane
-
-            //Set transition
-            makeFadeTransition(bookingForm);
-
-
-            rightAnchorPane.getChildren().setAll(bookingForm);
-
-            // Give the controller access to the main app.
-            BookingPageController controller = loader.getController();
-            controller.setMainApp(this);
-
-        } catch (IOException e) {
-            e.printStackTrace();
         }
     }
 
@@ -228,29 +224,6 @@ public class MainApp extends Application {
             return false;
         }
     }
-    public void showHomepage() {
-        //TODO: Load BookingPage.fxml
-        try {
-            //Load the booking page fxml file
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(MainApp.class.getResource("HomePage.fxml"));
-            AnchorPane homepage = (AnchorPane) loader.load(); //Casting AnchorPane -> Pane
-
-            //Set transition
-            makeFadeTransition(homepage);
-
-
-            rightAnchorPane.getChildren().setAll(homepage);
-
-            // Give the controller access to the main app.
-            HomepageController controller = loader.getController();
-            controller.setMainApp(this);
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
 
     public Stage getPrimaryStage() {
         return primaryStage;

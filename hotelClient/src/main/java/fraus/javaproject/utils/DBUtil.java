@@ -1,7 +1,7 @@
 package fraus.javaproject.utils;
 /**
  * DatabaseUtil class, connect & execute to MySQL database as config
- * @author Nguyen Dang Khoa
+ * @author Hoang Phuong Nhu Truong
  * */
 
 import java.sql.Connection;

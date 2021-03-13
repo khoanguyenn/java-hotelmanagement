@@ -8,7 +8,11 @@ import javafx.collections.ObservableList;
 
 import java.sql.*;
 import java.time.LocalDate;
-
+/**
+ * @author Dang Khoa Nguyen
+ * @see fraus.javaproject.dao.Customer.CustomerDAO
+ * @deprecated
+ * */
 public class CustomerDAOImpl implements CustomerDAO {
     private static Connection connection = DBUtil.getConnection();
     private static String getAllQuery = "SELECT * FROM customer";

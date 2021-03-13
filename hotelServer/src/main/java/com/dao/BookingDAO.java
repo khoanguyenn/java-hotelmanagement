@@ -26,27 +26,29 @@ public class BookingDAO {
         return query.getResultList();
     }
 
-    public void save(Booking booking) {
-        executeInTransaction(session -> session.save(booking));
+    public boolean save(Booking booking) {
+        return executeInTransaction(session -> session.save(booking));
     }
 
-    public void update(Booking booking) {
-        executeInTransaction(session -> session.update(booking));
+    public boolean update(Booking booking) {
+        return executeInTransaction(session -> session.update(booking));
     }
 
-    public void delete(Booking booking) {
-        executeInTransaction(session -> session.delete(booking));
+    public boolean delete(Booking booking) {
+        return executeInTransaction(session -> session.delete(booking));
     }
 
-    public void executeInTransaction(Consumer<Session> action) {
+    public boolean executeInTransaction(Consumer<Session> action) {
         Transaction transaction = session.getTransaction();
         try {
             transaction.begin();
             action.accept(session);
             transaction.commit();
+            return true;
         } catch (Exception exception) {
             transaction.rollback();
             exception.printStackTrace();
+            return false;
         } finally {
             session.close();
         }

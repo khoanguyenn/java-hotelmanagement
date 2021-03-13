@@ -6,6 +6,9 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+/**
+ *
+ */
 @Entity
 @Table(name = "room")
 public class Room {
@@ -61,11 +64,7 @@ public class Room {
         return String.format("(Number= %s, Type= %s, Status= %s)", number, type, status);
     }
     public String toJSON() {
-        return String.format("{"
-                        +"\"number\" : \"%s\", "
-                        + "\"type\" : \"%s\", "
-                        + "\"status\" : \"%s\""
-                        + "}"
+        return String.format("{\"number\":\"%s\", \"type\":\"%s\", \"status\":\"%s\"}"
         , number, type, status);
     }
 }

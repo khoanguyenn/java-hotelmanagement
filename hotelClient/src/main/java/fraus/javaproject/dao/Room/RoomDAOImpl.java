@@ -10,7 +10,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.HashMap;
-
+/**
+ * @author Dang Khoa Nguyen
+ * @see fraus.javaproject.dao.Room.RoomDAO
+ * @deprecated
+ * */
 public class RoomDAOImpl implements RoomDAO {
     private static Connection connection = DBUtil.getConnection();
     private ObservableList<Room> roomList = FXCollections.observableArrayList();

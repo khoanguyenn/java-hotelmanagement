@@ -50,17 +50,22 @@ public class RoomServlet extends HttpServlet {
         String roomNumber = request.getParameter("number");
         String roomType = request.getParameter("type");
         String roomStatus = request.getParameter("status");
+        String _method = request.getParameter("_method"); //Prevent "null" value
+        if (_method == null) {
+            RoomDAO roomDAO = new RoomDAO();
+            Room newRoom = new Room(roomNumber, roomType, roomStatus);
+            roomDAO.save(newRoom);
 
-        RoomDAO roomDAO = new RoomDAO();
-        Room newRoom = new Room(roomNumber, roomType, roomStatus);
-        roomDAO.save(newRoom);
+            System.out.println("Add new room: " + newRoom.toString());
 
-        System.out.println("Add new room: " + newRoom.toString());
-
-
-        response.setStatus(200);
-        PrintWriter res = response.getWriter();
-        res.println("{\"message\": \"received\"}");
+            response.setStatus(200);
+            PrintWriter res = response.getWriter();
+            res.println("{\"message\": \"received\"}");
+            response.sendRedirect("/hotelmanagement/home");
+        } else {
+            if (_method.equals("PUT")) doPut(request, response);
+            if (_method.equals("DELETE")) doDelete(request, response);
+        }
     }
 
     protected void doPut(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -77,20 +82,21 @@ public class RoomServlet extends HttpServlet {
 
         PrintWriter res = response.getWriter();
         res.println("{\"message\": \"Put to database\"}");
+        response.sendRedirect("/hotelmanagement/home");
     }
 
     protected void doDelete(HttpServletRequest req, HttpServletResponse response) throws IOException {
         String roomNumber = req.getParameter("number");
 
         RoomDAO roomDAO = new RoomDAO();
-        //Room deleteRoom = roomDAO.get(roomNumber);
-        //System.out.println(deleteRoom.toString());
-        //roomDAO.delete(deleteRoom);
+        Room deleteRoom = roomDAO.get(roomNumber);
+        roomDAO.delete(deleteRoom);
 
         response.setStatus(200);
 
         PrintWriter res = response.getWriter();
         res.println("{\"message\": \"Deleted\"}");
+        response.sendRedirect("/hotelmanagement/home");
     }
 
 }
