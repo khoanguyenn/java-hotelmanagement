@@ -5,10 +5,13 @@ import com.util.HibernateUtil;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
-;
 import java.util.List;
 import java.util.function.Consumer;
-
+/**
+ * Booking data accessing object, utilizes to communicate database to retrieve booking's information
+ * @author Phuong Nhu Truong Hoang
+ * @version 1.0.1
+ * */
 public class BookingDAO {
     private Session session = HibernateUtil.getSessionFactory().openSession();
     public List<Booking> getAll() {

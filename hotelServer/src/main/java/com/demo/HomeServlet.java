@@ -13,7 +13,11 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.List;
-
+/**
+ * Home Servlet, which is a developing feature for web application in the future
+ * @author Phuong Nhu Truong Hoang, Dang Khoa Nguyen
+ * @version 1.0.5
+ * */
 public class HomeServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 

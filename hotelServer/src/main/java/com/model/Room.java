@@ -7,8 +7,10 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 /**
- *
- */
+ * Encapsulating all information related to Room's information, utilizes as model to map all booking's information retrieve from database
+ * @author Phuong Nhu Truong Hoang, Dang Khoa Nguyen
+ * @version 1.0
+ * */
 @Entity
 @Table(name = "room")
 public class Room {

@@ -5,7 +5,11 @@ import org.hibernate.boot.Metadata;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
-
+/**
+ * Hibernate utilization for connecting to database and mapping the data to classes.
+ * @author Phuong Nhu Truong Hoang
+ * @version 1.0.0
+ * */
 public class HibernateUtil {
     private static StandardServiceRegistry registry;
     private static SessionFactory sessionFactory;

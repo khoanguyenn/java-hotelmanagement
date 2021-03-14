@@ -19,7 +19,11 @@ import javafx.scene.input.MouseEvent;
 
 import java.util.List;
 import java.util.function.Predicate;
-
+/**
+ * Display all current customers of the hotel, includes their personal information and booking status
+ * @author Xuan Huy Ha
+ * @version 1.0.5
+ * */
 public class CustomerManagementController {
     private FilteredList<Customer> customerFilteredList;
     private ObservableList<Customer> customerData;

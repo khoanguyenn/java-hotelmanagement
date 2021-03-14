@@ -20,7 +20,11 @@ import javafx.stage.Stage;
 
 import java.util.List;
 import java.util.function.Predicate;
-
+/**
+ * Show a simple version of available customers stored in the database
+ * @author Xuan Huy Ha
+ * @version 1.0.0
+ * */
 public class CustomerListController {
     private FilteredList<Customer> customerFilteredList;
     public Customer selectedCustomer;

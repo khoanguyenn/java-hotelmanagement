@@ -9,7 +9,11 @@ import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundFill;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.paint.Color;
-
+/**
+ * Root layout, which is first initialized when opening the window, load the right-hand navigation bar
+ * @author Xuan Huy Ha, Dang Khoa Nguyen
+ * @version 1.0.1
+ * */
 public class RootLayoutController {
     private boolean isClicked = false;
     private Background buttonBg = new Background(new BackgroundFill(Color.PINK, CornerRadii.EMPTY, Insets.EMPTY));

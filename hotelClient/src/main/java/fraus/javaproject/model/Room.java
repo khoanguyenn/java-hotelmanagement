@@ -1,7 +1,7 @@
 package fraus.javaproject.model;
 /**
  * Encapsulating all information related to Room's information, utilizes as model to map all booking's information retrieve from database
- * @author Xuan Huy Ha
+ * @author Xuan Huy Ha, Dang Khoa Nguyen
  * @version 1.0
  * */
 public class Room {

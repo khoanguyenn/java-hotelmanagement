@@ -20,6 +20,11 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 
+/**
+ * Show the booking information as a dialog, according to customer stored on database
+ * @author Xuan Huy Ha
+ * @version 1.0.0
+ * */
 import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.List;

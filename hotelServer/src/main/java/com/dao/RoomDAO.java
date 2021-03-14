@@ -7,7 +7,11 @@ import org.hibernate.Transaction;
 
 import java.util.List;
 import java.util.function.Consumer;
-
+/**
+ * Room data accessing object, utilizes to communicate database to retrieve room's information
+ * @author Phuong Nhu Truong Hoang
+ * @version 1.0.1
+ * */
 public class RoomDAO {
     private Session session = HibernateUtil.getSessionFactory().openSession();
     public List<Room> getAll() {
