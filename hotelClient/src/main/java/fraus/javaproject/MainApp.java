@@ -20,6 +20,8 @@ import java.net.URL;
 /**
  * JavaFX Main application, contains all of the view method to display the root page, dialog, and other pages.
  * This application uses Model-View-Controller pattern to the efficiently display information to users.
+ * @author Khoa Dang Nguyen, Xuan Huy Ha
+ * @version 2.0.0
  */
 public class MainApp extends Application {
     private Stage primaryStage;

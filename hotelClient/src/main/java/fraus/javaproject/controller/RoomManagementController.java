@@ -16,7 +16,12 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.function.Predicate;
 
-
+/**
+ * Room management page, display all rooms information in tabular list, includes features such as create new, edit or delete
+ * the rooms on the list
+ * @author Dang Khoa Nguyen
+ * @version 1.0.8
+ * */
 public class RoomManagementController {
     private MainApp mainApp;
     private FilteredList<Room> filteredRoomList;

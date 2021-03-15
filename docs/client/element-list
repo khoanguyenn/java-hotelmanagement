@@ -1,0 +1,9 @@
+module:fraus.javaproject
+fraus.javaproject
+fraus.javaproject.api
+fraus.javaproject.controller
+fraus.javaproject.dao.Booking
+fraus.javaproject.dao.Customer
+fraus.javaproject.dao.Room
+fraus.javaproject.model
+fraus.javaproject.utils

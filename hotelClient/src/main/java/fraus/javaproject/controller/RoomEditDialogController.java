@@ -7,7 +7,11 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-
+/**
+ * Room dialog, display create, edit, delete a room dialog to interact with
+ * @author Dang Khoa Nguyen
+ * @version 1.0.5
+ * */
 public class RoomEditDialogController {
     private boolean okClicked;
     private Stage dialogStage;

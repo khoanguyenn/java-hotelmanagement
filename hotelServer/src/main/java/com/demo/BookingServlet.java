@@ -12,7 +12,12 @@ import com.dao.BookingDAO;
 import com.model.Booking;
 import com.google.gson.*;
 import com.util.DateUtil;
-
+/**
+ * Booking Servlet which handles the all request methods from booking route <strong>/bookings</strong>, accepting 4 methods
+ * GET, POST, PUT, DELETE
+ * @author Phuong Nhu Truong Hoang, Dang Khoa Nguyen
+ * @version 1.0.5
+ * */
 public class BookingServlet extends HttpServlet {
     private Gson gson = new Gson();
     private Booking getBookingFromParams(HttpServletRequest request) {

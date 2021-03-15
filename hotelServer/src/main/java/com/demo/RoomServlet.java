@@ -15,7 +15,12 @@ import javax.servlet.http.HttpServletResponse;
 import com.dao.RoomDAO;
 import com.model.Room;
 import com.google.gson.*;
-
+/**
+ * Room Servlet which handles the all request methods from room route <strong>/rooms</strong>, accepting 4 methods
+ * GET, POST, PUT, DELETE
+ * @author Phuong Nhu Truong Hoang, Dang Khoa Nguyen
+ * @version 1.0.5
+ * */
 public class RoomServlet extends HttpServlet {
     private Gson gson = new Gson();
 

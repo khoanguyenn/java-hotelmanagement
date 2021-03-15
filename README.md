@@ -1,11 +1,12 @@
 # Hotel management Java project
 
 ## Introduction
-Running an entire hotel using paper document could be hard to manage and keep track the room, booking information or evenly
-the customer's personal information. In order to the solve the previous problems related to the documentations, a hotel management 
-desktop application is made to help reducing the managing effort of the hotel operators.
+For the purpose of solving the problems related to the managing documentations, a hotel management 
+desktop application is made to help reducing the managing efforts of the hotel operators.
 
-The hotel management Java application is established to digitalize a fraction of hotel management. This project includes 3 team-members: Nguyen Dang Khoa, 
+The hotel management Java application is established to digitalize a fraction of hotel management. 
+
+This project includes 3 team-members: Nguyen Dang Khoa, 
 Truong Hoang Phuong Nhu and Ha Xuan Huy, working in 4 months to complete the project.
 
 Made to accomplish Java-OOP modular on semester 3 of VGU.
@@ -20,20 +21,22 @@ Made to accomplish Java-OOP modular on semester 3 of VGU.
 + Database:
   + MySQL 9
 ## Installation guide
-### 1. Required materials
+### 1. Setup SQL database
+Run the `sqlConfig.sql` which could be found in the main directory to setup the SQL database
+### 2. Required materials
 There are some required materials need to be installed to run the desktop application.
-  + **Maven**, is utilized to manage the required libraries to run the application.
+  + **Maven**, is utilized to manage the required libraries to run the application, read the installation guide [here](https://github.com/khoanguyenn/java-hotelmanagement/blob/main/Installation%20guide/Maven%20install%20guide.md).
   + **JavaFX SDK**, uses to run front-end application (desktop), you can download JavaFX SDK from [here](https://gluonhq.com/products/javafx/).
-  + **Tomcat 9**, uses to deploy the back-end of application, you can download from [here](htpps://www.tomcat.apache.org).
+  + **Tomcat 9**, uses to deploy the back-end of application, you can read the installation guide [here](https://github.com/khoanguyenn/java-hotelmanagement/blob/main/Installation%20guide/Apache%20Tomcat%20install%20guide.md).
   + **MySQL Server**, is the database of the application, if you don't have MySQL server, you can download from 
   [here](https://www.dev.mysql.com/downloads/mysql/).
   + Makes sure that you cloned this project on github.
-## 2. Maven Tomcat deploy
+## 3. Maven Tomcat deploy
 1. Go to server's folder: `cd hotelServer`.
 2. Deloy with cargo plugin by: `mvn cargo:deploy`.
 3. Run Tomcat's server by running `startup.bat` from your Tomcat directory. Example: `C:\Program Files\Apache Software Foundation\Tomcat 9.0\bin\startup.bat`.
 4. __Further information:__ [click here](https://www.baeldung.com/tomcat-deploy-war)
-### 3. Maven JavaFX build & run
+### 4. Maven JavaFX build & run
 1. Go to Javafx client's folder `cd hotelClient`
 2. Build package by using command `maven package`
 3. Run ".jar" file by `java --module-path <your-javafx-sdk-path> --add-modules javafx.controls,javafx.fxml,mysql.connector -jar target\hotelmanagement-1.0-SNAPSHOT.jar`

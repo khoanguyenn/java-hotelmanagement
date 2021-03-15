@@ -16,7 +16,12 @@ import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.List;
 import java.util.regex.Pattern;
-
+/**
+ * Show the booking form for receptionist to either enter new customer or choose the available customer identity stored on
+ * database beforehand
+ * @author Dang Khoa Nguyen, Xuan Huy Ha
+ * @version 1.0.0
+ * */
 public class BookingPageController {
     private MainApp mainApp;
     private ObservableList<Room> roomList;

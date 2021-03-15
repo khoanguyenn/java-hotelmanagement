@@ -3,22 +3,18 @@ package fraus.javaproject.controller;
 import com.google.gson.reflect.TypeToken;
 import fraus.javaproject.MainApp;
 import fraus.javaproject.api.Client;
-import fraus.javaproject.dao.Room.RoomDAO;
-import fraus.javaproject.dao.Room.RoomDAOImpl;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
-import javafx.scene.text.Text;
 
-import java.util.ArrayList;
 import java.util.HashMap;
+/**
+ * Desktop homepage, display general hotel's information about the available rooms
+ * @author Xuan Huy Ha
+ * @version 1.0.5
+ * */
 public class HomepageController {
     private MainApp mainApp;
-    //private HashMap<String, Integer> roomCount = new HashMap<String, Integer>();
-    //private HashMap<String, Integer> getRoomCount() {
-    //    RoomDAO roomDAO = new RoomDAOImpl();
-    //    return roomDAO.getRoomCount();
-    //}
     private HashMap<String, String> countParams = new HashMap<String, String>();
 
     @FXML

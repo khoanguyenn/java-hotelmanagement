@@ -12,7 +12,12 @@ import com.dao.CustomerDAO;
 import com.model.Customer;
 import com.google.gson.*;
 import com.util.DateUtil;
-
+/**
+ * Customer Servlet which handles the all request methods from customer route <strong>/customers</strong>, accepting 4 methods
+ * GET, POST, PUT, DELETE
+ * @author Phuong Nhu Truong Hoang, Dang Khoa Nguyen
+ * @version 1.0.5
+ * */
 public class CustomerServlet extends HttpServlet {
     private Gson gson = new GsonBuilder().setDateFormat("yyyy-MM-dd").create();
     private Customer getCustomerFromParams(HttpServletRequest request) {
