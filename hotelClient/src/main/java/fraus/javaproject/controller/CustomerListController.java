@@ -6,6 +6,7 @@ import fraus.javaproject.dao.Customer.CustomerDAO;
 import fraus.javaproject.dao.Customer.CustomerDAOImpl;
 import fraus.javaproject.model.Customer;
 import fraus.javaproject.utils.DateUtil;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
@@ -100,12 +101,17 @@ public class CustomerListController {
         new Thread(new Runnable() {
             @Override
             public void run() {
-                ObservableList<Customer> customerData = getCustomerData();
+                Platform.runLater(new Runnable() {
+                    @Override
+                    public void run() {
+                        ObservableList<Customer> customerData = getCustomerData();
 
-                //Wrap customer's data with filtered list
-                customerFilteredList = new FilteredList<>(customerData);
+                        //Wrap customer's data with filtered list
+                        customerFilteredList = new FilteredList<>(customerData);
 
-                showCustomerTable(customerFilteredList);
+                        showCustomerTable(customerFilteredList);
+                    }
+                });
             }
         }).start();
     }

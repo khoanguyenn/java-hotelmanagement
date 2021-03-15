@@ -60,15 +60,29 @@ public class RoomManagementController {
     void handleDeleteRoom(ActionEvent event) {
         Room selectedRoom = roomTable.getSelectionModel().getSelectedItem();
         if (selectedRoom != null) {
-            //Put temporary room into HashMap
-            HashMap<String, String> params = new HashMap<>();
-            params.put("number", selectedRoom.getNumber());
-            params.put("type", selectedRoom.getType());
-            params.put("status", selectedRoom.getStatus());
+            //Show confirmation dialog
+            Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+            alert.initOwner(mainApp.getPrimaryStage());
+            alert.setTitle("Delete room");
+            alert.setHeaderText("Are you sure to delete room " + selectedRoom.getNumber() + "?");
+            alert.setContentText("Please click OK to confirm!");
+            alert.showAndWait();
 
-            //Make request to back-end server
-            client.setMethod("DELETE").setParams(params).sendRequest();
-            showRooms();
+            ButtonType selectedButton = alert.getResult();
+            if (selectedButton.getText().equals("OK")) {
+                //Put temporary room into HashMap
+                HashMap<String, String> params = new HashMap<>();
+                params.put("number", selectedRoom.getNumber());
+                params.put("type", selectedRoom.getType());
+                params.put("status", selectedRoom.getStatus());
+
+                //Make request to back-end server
+                client.setMethod("DELETE").setParams(params).sendRequest();
+                showRooms();
+            }
+            else {
+                return;
+            }
         } else {
         // Nothing selected.
         Alert alert = new Alert(Alert.AlertType.WARNING);
@@ -87,7 +101,7 @@ public class RoomManagementController {
         //Get selected room from room's table
         Room selectedRoom = roomTable.getSelectionModel().getSelectedItem();
         if (selectedRoom != null) {
-            boolean okClicked = mainApp.showRoomEditDialog(selectedRoom, true);
+            boolean okClicked = mainApp.showRoomEditDialog(selectedRoom, true, "Edit room");
             if (okClicked) {
                 //Put temporary room into HashMap
                 HashMap<String, String> params = new HashMap<>();
@@ -115,7 +129,7 @@ public class RoomManagementController {
     @FXML
     void handleNewRoom(ActionEvent event) {
         Room tempRoom = new Room();
-        boolean okClicked = mainApp.showRoomEditDialog(tempRoom, false);
+        boolean okClicked = mainApp.showRoomEditDialog(tempRoom, false, "Create new room");
         if (okClicked) {
             //Put temporary room into HashMap
             HashMap<String, String> params = new HashMap<>();

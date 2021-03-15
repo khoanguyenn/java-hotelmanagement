@@ -131,7 +131,7 @@ public class MainApp extends Application {
         }
     }
 
-    public boolean showRoomEditDialog(Room room, boolean isDisable) {
+    public boolean showRoomEditDialog(Room room, boolean isDisable, String dialogName) {
         try {
             //Load the fxml file and create a new stage for the popup dialog
             FXMLLoader loader = new FXMLLoader();
@@ -140,9 +140,10 @@ public class MainApp extends Application {
 
             //Create the dialog stage
             Stage dialogStage = new Stage();
-            dialogStage.setTitle("Edit room");
+            dialogStage.setTitle(dialogName);
             dialogStage.initModality(Modality.WINDOW_MODAL);
             dialogStage.initOwner(primaryStage);
+            dialogStage.getIcons().add(new Image("icon/house.png"));
 
             //Create the dialog scene
             Scene scene = new Scene(page);

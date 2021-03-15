@@ -8,6 +8,7 @@ module fraus.javaproject {
     requires java.naming;
     requires java.sql;
     requires java.net.http;
+    requires java.base;
 
     opens fraus.javaproject.controller to javafx.fxml;
     opens fraus.javaproject.model to javafx.base, com.google.gson;
