@@ -3,11 +3,8 @@ package fraus.javaproject.controller;
 
 import com.google.gson.reflect.TypeToken;
 import fraus.javaproject.api.Client;
-import fraus.javaproject.dao.Booking.BookingDAO;
-import fraus.javaproject.dao.Booking.BookingDAOImpl;
 import fraus.javaproject.model.Booking;
 import fraus.javaproject.model.Customer;
-import javafx.beans.Observable;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
@@ -18,7 +15,6 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
-import javafx.util.Callback;
 
 /**
  * Show the booking information as a dialog, according to customer stored on database
@@ -31,9 +27,7 @@ import java.util.List;
 import java.util.function.Predicate;
 public class BookingDialogController {
     private boolean okClicked = false;
-    private Booking selectedBooking;
     private Stage dialogStage;
-    //private BookingDAO bookingDAO = new BookingDAOImpl();
     private ObservableList<Booking> bookingList;
     private FilteredList<Booking> bookingFilteredList;
 
