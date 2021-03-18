@@ -33,9 +33,10 @@ There are some required materials need to be installed to run the desktop applic
   + Makes sure that you cloned this project on github.
 ## 3. Maven Tomcat deploy
 1. Go to server's folder: `cd hotelServer`.
-2. Deloy with cargo plugin by: `mvn cargo:deploy`.
-3. Run Tomcat's server by running `startup.bat` from your Tomcat directory. Example: `C:\Program Files\Apache Software Foundation\Tomcat 9.0\bin\startup.bat`.
-4. __Further information:__ [click here](https://www.baeldung.com/tomcat-deploy-war)
+2. Compile the project: `mvn package`.
+3. Deloy with cargo plugin by: `mvn cargo:deploy`.
+4. Run Tomcat's server by running `startup.bat` from your Tomcat directory. Example: `C:\Program Files\Apache Software Foundation\Tomcat 9.0\bin\startup.bat`.
+5. __Further information:__ [click here](https://www.baeldung.com/tomcat-deploy-war)
 ### 4. Maven JavaFX build & run
 1. Go to Javafx client's folder `cd hotelClient`
 2. Build package by using command `maven package`
