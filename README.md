@@ -25,9 +25,9 @@ Made to accomplish Java-OOP modular on semester 3 of VGU.
 Run the `sqlConfig.sql` which could be found in the main directory to setup the SQL database
 ### 2. Required materials
 There are some required materials need to be installed to run the desktop application.
-  + **Maven**, is utilized to manage the required libraries to run the application, read the installation guide [here](https://github.com/khoanguyenn/java-hotelmanagement/blob/main/Installation%20guide/Maven%20install%20guide.md).
+  + **Maven**, is utilized to manage the required libraries to run the application, read the installation guide [here](https://github.com/khoanguyenn/java-hotelmanagement/blob/main/docs/install-guide/guides/Maven%20install%20guide.md).
   + **JavaFX SDK**, uses to run front-end application (desktop), you can download JavaFX SDK from [here](https://gluonhq.com/products/javafx/).
-  + **Tomcat 9**, uses to deploy the back-end of application, you can read the installation guide [here](https://github.com/khoanguyenn/java-hotelmanagement/blob/main/Installation%20guide/Apache%20Tomcat%20install%20guide.md).
+  + **Tomcat 9**, uses to deploy the back-end of application, you can read the installation guide [here](https://github.com/khoanguyenn/java-hotelmanagement/blob/main/docs/install-guide/guides/Apache%20Tomcat%20install%20guide.md).
   + **MySQL Server**, is the database of the application, if you don't have MySQL server, you can download from 
   [here](https://www.dev.mysql.com/downloads/mysql/).
   + Makes sure that you cloned this project on github.
