@@ -179,6 +179,7 @@ public class MainApp extends Application {
             customerDialog.setTitle("Choose available customer");
             customerDialog.initModality(Modality.WINDOW_MODAL);
             customerDialog.initOwner(primaryStage);
+            customerDialog.getIcons().add(new Image("icon/house.png"));
 
             //Create the dialog scene
             Scene scene = new Scene(customerScene);
@@ -209,6 +210,7 @@ public class MainApp extends Application {
             showBookingDialog.setTitle("Booking information");
             showBookingDialog.initModality(Modality.WINDOW_MODAL);
             showBookingDialog.initOwner(primaryStage);
+            showBookingDialog.getIcons().add(new Image("icon/house.png"));
 
             //Create the dialog scene
             Scene scene = new Scene(customerScene);

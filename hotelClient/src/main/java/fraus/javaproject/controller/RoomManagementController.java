@@ -123,8 +123,8 @@ public class RoomManagementController {
             Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.initOwner(mainApp.getPrimaryStage());
             alert.setTitle("No Selection");
-            alert.setHeaderText("No Person Selected");
-            alert.setContentText("Please select a person in the table.");
+            alert.setHeaderText("No Room Selected");
+            alert.setContentText("Please select a room in the table.");
 
             alert.showAndWait();
         }
