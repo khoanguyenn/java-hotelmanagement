@@ -9,7 +9,7 @@ import javafx.collections.ObservableList;
 import java.sql.*;
 import java.time.LocalDate;
 /**
- * @author Dang Khoa Nguyen
+ * @author Khoa Nguyen Dang
  * @see fraus.javaproject.dao.Booking.BookingDAO
  * @deprecated
  * */

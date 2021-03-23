@@ -7,7 +7,7 @@ import javafx.scene.control.Button;
 
 /**
  * Root layout, which is first initialized when opening the window, load the right-hand navigation bar
- * @author Xuan Huy Ha, Dang Khoa Nguyen
+ * @author Huy Ha Xuan, Khoa Nguyen Dang
  * @version 1.0.1
  * */
 public class RootLayoutController {

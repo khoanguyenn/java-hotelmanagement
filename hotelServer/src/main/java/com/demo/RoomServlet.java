@@ -18,7 +18,7 @@ import com.google.gson.*;
 /**
  * Room Servlet which handles the all request methods from room route <strong>/rooms</strong>, accepting 4 methods
  * GET, POST, PUT, DELETE
- * @author Phuong Nhu Truong Hoang, Dang Khoa Nguyen
+ * @author Nhu Truong Hoang Phuong, Khoa Nguyen Dang
  * @version 1.0.5
  * */
 public class RoomServlet extends HttpServlet {

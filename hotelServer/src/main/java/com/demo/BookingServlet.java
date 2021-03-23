@@ -15,7 +15,7 @@ import com.util.DateUtil;
 /**
  * Booking Servlet which handles the all request methods from booking route <strong>/bookings</strong>, accepting 4 methods
  * GET, POST, PUT, DELETE
- * @author Phuong Nhu Truong Hoang, Dang Khoa Nguyen
+ * @author Nhu Truong Hoang Phuong, Khoa Nguyen Dang
  * @version 1.0.5
  * */
 public class BookingServlet extends HttpServlet {

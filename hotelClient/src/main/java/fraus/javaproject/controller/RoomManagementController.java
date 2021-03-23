@@ -19,7 +19,7 @@ import java.util.function.Predicate;
 /**
  * Room management page, display all rooms information in tabular list, includes features such as create new, edit or delete
  * the rooms on the list
- * @author Dang Khoa Nguyen
+ * @author Khoa Nguyen Dang
  * @version 1.0.8
  * */
 public class RoomManagementController {

@@ -5,7 +5,7 @@ import java.time.LocalDate;
 /**
  * Encapsulating all information related to Customer's information, utilizes as model to map all booking's information retrieve from database
  * Contains the name, gender, telephone number, address, email and birthday of a specific customer.
- * @author Phuong Nhu Truong Hoang, Dang Khoa Nguyen
+ * @author Huy Ha Xuan, Khoa Nguyen Dang
  * @version 1.0
  * */
 public class Customer {

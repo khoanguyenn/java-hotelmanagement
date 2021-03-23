@@ -4,7 +4,7 @@ import java.time.LocalDate;
 /**
  * Encapsulating all information related to Booking's information, utilizes as model to map all booking's information retrieve from database
  * Contains
- * @author Phuong Nhu Truong Hoang
+ * @author Huy Ha Xuan
  * @version 1.0
  * */
 public class Booking  {

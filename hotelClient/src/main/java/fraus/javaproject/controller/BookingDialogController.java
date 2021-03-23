@@ -25,6 +25,11 @@ import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.List;
 import java.util.function.Predicate;
+/**
+ * Show the booking form for receptionist to enter reserved information
+ * @author Khoa Nguyen Dang, Huy Ha Xuan
+ * @version 1.0.0
+ * */
 public class BookingDialogController {
     private boolean okClicked = false;
     private Stage dialogStage;

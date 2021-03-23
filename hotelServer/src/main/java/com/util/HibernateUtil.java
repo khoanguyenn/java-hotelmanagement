@@ -7,7 +7,7 @@ import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 /**
  * Hibernate utilization for connecting to database and mapping the data to classes.
- * @author Phuong Nhu Truong Hoang
+ * @author Nhu Truong Hoang Phuong
  * @version 1.0.0
  * */
 public class HibernateUtil {

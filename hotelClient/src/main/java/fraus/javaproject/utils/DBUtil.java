@@ -1,7 +1,7 @@
 package fraus.javaproject.utils;
 /**
  * DatabaseUtil class, connect & execute to MySQL database as config
- * @author Hoang Phuong Nhu Truong
+ * @author Huy Ha Xuan
  * @version 1.0.0
  * @deprecated due to the safety reasons, desktop application don't have to connect directly to database.
  * */

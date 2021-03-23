@@ -10,7 +10,7 @@ import javafx.scene.control.Label;
 import java.util.HashMap;
 /**
  * Desktop homepage, display general hotel's information about the available rooms
- * @author Xuan Huy Ha
+ * @author Huy Ha Xuan
  * @version 1.0.5
  * */
 public class HomepageController {

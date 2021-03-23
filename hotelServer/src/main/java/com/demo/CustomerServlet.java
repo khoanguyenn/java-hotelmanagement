@@ -15,7 +15,7 @@ import com.util.DateUtil;
 /**
  * Customer Servlet which handles the all request methods from customer route <strong>/customers</strong>, accepting 4 methods
  * GET, POST, PUT, DELETE
- * @author Phuong Nhu Truong Hoang, Dang Khoa Nguyen
+ * @author Nhu Truong Hoang Phuong, Khoa Nguyen Dang
  * @version 1.0.5
  * */
 public class CustomerServlet extends HttpServlet {

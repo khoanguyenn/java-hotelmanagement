@@ -11,7 +11,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.HashMap;
 /**
- * @author Dang Khoa Nguyen
+ * @author Khoa Nguyen Dang
  * @see fraus.javaproject.dao.Room.RoomDAO
  * @deprecated
  * */

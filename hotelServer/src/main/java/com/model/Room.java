@@ -8,7 +8,7 @@ import javax.persistence.Table;
 
 /**
  * Encapsulating all information related to Room's information, utilizes as model to map all booking's information retrieve from database
- * @author Phuong Nhu Truong Hoang, Dang Khoa Nguyen
+ * @author Nhu Truong Hoang Phuong, Khoa Nguyen Dang
  * @version 1.0
  * */
 @Entity

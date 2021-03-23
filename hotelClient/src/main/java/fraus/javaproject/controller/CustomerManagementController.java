@@ -21,7 +21,7 @@ import java.util.List;
 import java.util.function.Predicate;
 /**
  * Display all current customers of the hotel, includes their personal information and booking status
- * @author Xuan Huy Ha
+ * @author Huy Ha Xuan
  * @version 1.0.5
  * */
 public class CustomerManagementController {

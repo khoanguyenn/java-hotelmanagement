@@ -5,7 +5,7 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 /**
  * Date utilization for convenient to convert date to string and vice versa.
- * @author Phuong Nhu Truong Hoang
+ * @author Nhu Truong Hoang Phuong
  * @version 1.0.0
  * */
 public class DateUtil {

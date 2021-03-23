@@ -19,7 +19,7 @@ import java.util.regex.Pattern;
 /**
  * Show the booking form for receptionist to either enter new customer or choose the available customer identity stored on
  * database beforehand
- * @author Dang Khoa Nguyen, Xuan Huy Ha
+ * @author Khoa Nguyen Dang, Huy Ha Xuan
  * @version 1.0.0
  * */
 public class BookingPageController {

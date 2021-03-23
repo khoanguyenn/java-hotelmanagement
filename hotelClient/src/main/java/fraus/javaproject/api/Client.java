@@ -14,7 +14,7 @@ import java.util.Map;
  *     This class is utilized BUILDER pattern to create communication channel to web-server using JSON
  *     ,accepting 4 important methods GET, POST, PUT, DELETE request methods.
  * </p>
- * @author Phuong Nhu Truong Hoang, Dang Khoa Nguyen
+ * @author Huy Ha Xuan, Dang Khoa Nguyen
  * @version 1.0.2
  * */
 public class Client {

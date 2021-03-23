@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.function.Consumer;
 /**
  * Customer data accessing object, utilizes to communicate database to retrieve customer's information
- * @author Phuong Nhu Truong Hoang
+ * @author Nhu Truong Hoang Phuong
  * @version 1.0.1
  * */
 public class CustomerDAO {
