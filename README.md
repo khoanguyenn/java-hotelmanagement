@@ -10,6 +10,9 @@ This project includes 3 team-members: Nguyen Dang Khoa,
 Truong Hoang Phuong Nhu and Ha Xuan Huy, working in 4 months to complete the project.
 
 Made to accomplish Java-OOP modular on semester 3 of VGU.
+
+The succinct installation guide is shown below. However, the more details installation guide, user manual 
+and javadoc can be found under `docs` folder.
 ### Technology uses:
 + Desktop application:
   + Maven
@@ -48,6 +51,9 @@ There are some required materials need to be installed to run the desktop applic
 
 ### 4. Extra information
 #### Hotel management API
+`GET:` /hotelmanagement/home
++ Displays all rooms information in the webapp version
+
 `GET:` /hotelmanagement/rooms
 + Get all rooms information.
 + Params: 
